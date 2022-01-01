@@ -21,21 +21,24 @@ struct Home: View {
                 
             }
             
-            Button(action: {
-                homeData.isNewData.toggle()
-            }, label: {
-                
-                Image(systemName: "plus")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding(20)
-                    .background(
-                        
-                        AngularGradient(gradient: .init(colors: [Color("Orange"), Color("Pink")]), center: .center)
-                    )
-                    .clipShape(Circle())
-            })
-                .padding()
+            VStack(alignment: .trailing){
+                Button(action: {
+                    homeData.isNewData.toggle()
+                }, label: {
+                    
+                    Image(systemName: "plus")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(20)
+                        .background(
+                            
+                            AngularGradient(gradient: .init(colors: [Color("Orange"), Color("Pink")]), center: .center)
+                        )
+                        .clipShape(Circle())
+                })
+                    .padding()
+            }
+            .ignoresSafeArea(.all, edges: .all)
         }
         
         .sheet(isPresented: $homeData.isNewData, content: {
@@ -47,5 +50,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+.previewInterfaceOrientation(.portrait)
     }
 }

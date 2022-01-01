@@ -33,6 +33,7 @@ struct CustomDatePicker: View {
                     }
                 } label: {
                     Image(systemName: "chevron.left")
+                        .foregroundColor(Color("Pink"))
                         .font(.title2)
                 }
                 
@@ -42,6 +43,7 @@ struct CustomDatePicker: View {
                     }
                 } label: {
                     Image(systemName: "chevron.right")
+                        .foregroundColor(Color("Pink"))
                         .font(.title2)
                 }
             }
